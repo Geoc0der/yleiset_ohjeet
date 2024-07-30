@@ -1,0 +1,3 @@
+Uuden python-virtuaaliympäristön luonti macissa
+
+python3 -m venv *haluttu kansiopolku*
