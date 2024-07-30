@@ -1,3 +1,10 @@
-Uuden python-virtuaaliympäristön luonti macissa
+Uuden python-virtuaaliympäristön luonti macissa:
 
-python3 -m venv *haluttu kansiopolku*
+#aluksi siirrytään haluttuun sijaintiin
+cd *haluttu kansiopolku*
+
+#ympäristön luonti
+python3 -m venv *haluttu ympäristön nimi*
+
+#ympäristön aktivointi
+source *äsken luodun ympäristön activate-tiedoston polku*
