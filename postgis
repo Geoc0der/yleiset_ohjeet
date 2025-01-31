@@ -1,0 +1,44 @@
+-- Parametrit: ruudun koko (meters), alueen rajat
+DO $$
+DECLARE
+    grid_size NUMERIC := 1000; -- Ruudun koko metreinä
+    xmin NUMERIC := 200000;
+    ymin NUMERIC := 6700000;
+    xmax NUMERIC := 300000;
+    ymax NUMERIC := 6800000;
+    x NUMERIC;
+    y NUMERIC;
+BEGIN
+    -- Luodaan ruudukon taulu, jos sitä ei ole olemassa
+    CREATE TABLE IF NOT EXISTS grid (
+        id SERIAL PRIMARY KEY,
+        geom GEOMETRY(POLYGON, 3067) -- Muuta SRID tarpeen mukaan
+    );
+    
+    -- Poistetaan vanhat ruudut
+    DELETE FROM grid;
+    
+    -- Luodaan ruudut
+    x := xmin;
+    WHILE x < xmax LOOP
+        y := ymin;
+        WHILE y < ymax LOOP
+            INSERT INTO grid (geom)
+            VALUES (
+                ST_SetSRID(
+                    ST_MakePolygon(ST_MakeLine(ARRAY[
+                        ST_MakePoint(x, y),
+                        ST_MakePoint(x + grid_size, y),
+                        ST_MakePoint(x + grid_size, y + grid_size),
+                        ST_MakePoint(x, y + grid_size),
+                        ST_MakePoint(x, y)
+                    ])),
+                    3067 -- Muuta tarvittaessa SRID
+                )
+            );
+            
+            y := y + grid_size;
+        END LOOP;
+        x := x + grid_size;
+    END LOOP;
+END $$;
