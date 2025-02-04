@@ -1,0 +1,3 @@
+Conda-ympäristön luonti:
+
+conda create --name samgeo
