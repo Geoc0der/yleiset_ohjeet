@@ -1,7 +1,7 @@
 Geopackagen vieminen postgisiin:
 ogr2ogr -f PostgreSQL PG:"dbname='Postgis_vienti_testi' host='hostnimi' port='portti' user='käyttäjätunnus' password='salasana'" /Users/larijaakkola/Documents/Projektit/Työhommat/Viedaan_postgisiin.gpkg
 
-Postgis-taulun tallentaminen geopackageksi (pitää testata):
 
+Postgis-taulun tallentaminen geopackageksi:
 cd *oikea polku*
 ogr2ogr -f "GPKG" mynewfilename.gpkg PG:"host=localhost user=*tunnus ilman asteriskeja* dbname=Köyliönjoki-Eurajoki-melontareissu password=*salasana ilman asteriskeja*" "kiinnostavat_paikat"
