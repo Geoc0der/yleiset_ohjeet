@@ -1,4 +1,4 @@
-Geopackagen vieminen postgisiin (jos ei toimi tarkista, ettei ole kaarevia heittomerkkejä):
+Geopackagen vieminen postgisiin (jos ei toimi tarkista, ettei ole kaarevia heittomerkkejä). Komento vie geopackagen kaikki taulut tietokantaan:
 ogr2ogr -f "PostgreSQL" PG:"dbname=Postgis_vienti_testi host=localhost port=5432 user=käyttäjätunnus password=salasana" /Users/larijaakkola/Documents/Projektit/Työhommat/mynewfilename.gpkg
 
 
