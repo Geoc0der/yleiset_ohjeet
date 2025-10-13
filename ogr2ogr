@@ -5,3 +5,7 @@ ogr2ogr -f "PostgreSQL" PG:"dbname=Postgis_vienti_testi host=localhost port=5432
 Postgis-taulun tallentaminen geopackageksi:
 cd *oikea polku*
 ogr2ogr -f "GPKG" mynewfilename.gpkg PG:"host=localhost user=*tunnus ilman asteriskeja* dbname=Köyliönjoki-Eurajoki-melontareissu password=*salasana ilman asteriskeja*" "kiinnostavat_paikat"
+
+Shapefilen vieminen postgresiin:
+
+ogr2ogr -f "PostgreSQL" PG:"dbname=*db:n nimi* host=*aws endpoint* port=5432 user=*käyttäjätunnus* password='*salasana*'" /Users/larijaakkola/Documents/Projektit/Testailuja/Kuntarjat_2025.shp -nln myshapefile -nlt PROMOTE_TO_MULTI -lco GEOMETRY_NAME=geom -lco SCHEMA=public
