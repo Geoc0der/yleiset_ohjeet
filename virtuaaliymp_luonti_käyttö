@@ -1,0 +1,10 @@
+Macissa ei pysty asentamaan python-kirjastoja suoraan emo-pythoniin, joten pitää luoda virtuaaliympäristö
+
+Luodaan virtuaaliympäristö
+
+python3 -m venv turbo
+
+Asennetaan pip ja overpy
+
+pip install --upgrade pip
+pip install overpy
