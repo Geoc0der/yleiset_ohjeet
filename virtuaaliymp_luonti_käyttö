@@ -10,5 +10,8 @@ pip install overpy
 Python-file ajetaan terminaalissa näin:
 python tiedostosi_nimi.py
 
+Välillä tämä ei toimi ja pitää käyttää python 3:a:
+python3 tiedostosi_nimi.py
+
 Mutta ennen sitä on yhdistettävä oikeaan virtuaaliympäristöön, esim:
 source turbo/bin/activate
